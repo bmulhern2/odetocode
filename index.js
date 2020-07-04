@@ -10,7 +10,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 let Schema = mongoose.Schema;
 let ObjectId = Schema.ObjectId;
 let PostSchema = new Schema({
-    _id: ObjectId,
+    id: ObjectId,
     description: String,
     post: String
     // Date
@@ -38,18 +38,17 @@ app.post('/post/create', function (req, res) {
     let newPost = new Posts({
         description: req.body.description,
         post: req.body.post,
-        _id: _id
+        id: req.params.id
     })
     Posts.create(newPost)
     res.redirect('/')
 })
-app.get('/post/:id', async function (req, res) {
-    await Posts.findById({_id: req.params.id}, function(posts) {
-        try {
-            console.log(posts)
-            res.render('post', { posts: posts })
-        } catch (error) {
-            console.log(error)
+app.get('/post/:id', function (req, res) {
+    Posts.findById(req.params.id, function(err, Post) {
+        if (!err) {
+            res.render('post', {Post: Post})
+        } else {
+            console.log(err)
         }
     })
 })

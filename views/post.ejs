@@ -8,10 +8,10 @@
             <nav-link><a href="admin">Admin</a></nav-link>
         </nav>
         <ul>
-            <% posts.forEach(function(post) { %>
-                <li><%= post.description %></li>
-                <li><%= post.post %></li>
-            <% }) %>
+        <% Post.forEach(function(Post) {%>
+            <li><%= Post.description %></li>
+            <li><%= Post.post %></li>
+        <% }) %>
         </ul>
     </body>
 </html>

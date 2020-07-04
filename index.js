@@ -1,8 +1,6 @@
 // Add Date Added
 // LightHouse Audit
 // Google Listing
-// Adwsense Sign Up
-// Ads?
 let dotenv = require('dotenv')
 dotenv.config()
 let express = require('express')

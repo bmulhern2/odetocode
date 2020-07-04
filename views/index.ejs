@@ -11,10 +11,12 @@
         <table class="table">
                 <tr>
                     <th class="text-light text-center">Description</th>
+                    <th class="text-light text-center">Date Created</th>
                 </tr>
                 <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="text-center text-light"><a href="post/<%= post._id %>"><%= post.description %></a></td>
+                            <td class="text-center text-light"><%= post.dateCreated %></td>
                         </tr>
                 <% }) %>
         </table>

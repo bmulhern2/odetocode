@@ -13,7 +13,8 @@ let ObjectId = Schema.ObjectId;
 let PostSchema = new Schema({
     id: ObjectId,
     description: String,
-    post: String
+    post: String,
+    dateCreated: Date
 
 })
 let Posts = mongoose.model('Post', PostSchema)
@@ -37,7 +38,8 @@ app.post('/post/create', function (req, res) {
     let newPost = new Posts({
         description: req.body.description,
         post: req.body.post,
-        id: req.params.id
+        id: req.params.id,
+        dateCreated: Date.now()
     })
     Posts.create(newPost)
     res.redirect('/')

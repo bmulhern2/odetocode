@@ -1,3 +1,8 @@
+// Add Date Added
+// LightHouse Audit
+// Google Listing
+// Adwsense Sign Up
+// Ads?
 let dotenv = require('dotenv')
 dotenv.config()
 let express = require('express')
@@ -11,8 +16,6 @@ let PostSchema = new Schema({
     id: ObjectId,
     description: String,
     post: String
-    // Date
-    // Subsequent id
 
 })
 let Posts = mongoose.model('Post', PostSchema)

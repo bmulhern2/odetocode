@@ -1,12 +1,10 @@
-// install dotenv && configure
-// 
-
+let dotenv = require('dotenv')
+dotenv.config()
 let express = require('express')
 let http = require('http')
 let mongoose = require('mongoose')
 let bodyParser = require('body-parser')
-let uri = "mongodb+srv://bmulhern2:Bmole22%21%21@cluster0-eopst.mongodb.net/<dbname>?retryWrites=true&w=majority"
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
 let Schema = mongoose.Schema;
 let ObjectId = Schema.ObjectId;
 let PostSchema = new Schema({
@@ -52,4 +50,4 @@ app.get('/post/:id', function (req, res) {
         }
     })
 })
-http.createServer(app).listen('8080')
+http.createServer(app).listen(process.env.PORT)

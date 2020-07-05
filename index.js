@@ -33,7 +33,7 @@ let ObjectId = Schema.ObjectId;
 let PostSchema = new Schema({
     id: ObjectId,
     description: String,
-    //author: String,
+    author: String,
     //video: String,
     post: String,
     image: String,
@@ -62,7 +62,7 @@ app.post('/post/create', upload.single('image'), function (req, res) {
     let newPost = new Posts({
         description: req.body.description,
         post: req.body.post,
-        //author: req.body.author,
+        author: req.body.author,
        // video: req.body.video,
         id: req.params.id,
         image: image,

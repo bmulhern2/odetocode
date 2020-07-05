@@ -1,4 +1,3 @@
-// 
 // LightHouse Audit
 // Google Listing
 let dotenv = require('dotenv')

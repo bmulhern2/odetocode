@@ -13,6 +13,9 @@
                 font-size: 60px;
             } table {
                 font-size: 22px;
+            } image {
+                height: 15%;
+                width: 20%;
             }
         </style> 
         </head>
@@ -23,11 +26,13 @@
         <table class="table">
                 <tr>
                     <th class="text-light text-center">Description</th>
+                    <th class="text-light text-center">Image</th>
                     <th class="text-light text-center">Date Created</th>
                 </tr>
                 <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="text-center text-light"><a class="text-danger" href="post/<%= post._id %>"><%= post.description %></a></td>
+                            <td class="text-center text-light"><img id="image" class="text-danger" src="data:image/png;base64, <%= post.image %>"</imge</td>
                             <td class="text-center text-light"><%= post.dateCreated %></td>
                         </tr>
                 <% }) %>

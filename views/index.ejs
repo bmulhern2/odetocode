@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <meta name="Description" content="Learn To Code Nodejs Stuff!"></meta>
         <title>Odetocode - Learn to Do Nodejs Stuff</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -37,7 +37,7 @@
                 </tr>
                 <% posts.forEach(function(post) { %>
                         <tr>
-                            <td class="text-center text-light"><a class="text-danger" href="post/<%= post._id %>"><%= post.description %></a></td>
+                            <td class="text-center text-light"><a class="text-light" href="post/<%= post._id %>"><%= post.description %></a></td>
                             <td class="text-center text-light"><img id="image" class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></imge</td>
                             <td class="text-center text-light"><%= post.dateCreated %></td>
                         </tr>

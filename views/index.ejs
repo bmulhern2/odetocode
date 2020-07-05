@@ -34,12 +34,14 @@
                     <th class="text-light text-center">Description</th>
                     <th class="text-light text-center">Image</th>
                     <th class="text-light text-center">Date Created</th>
+                    <th clss="text-light text-center">Author</th>
                 </tr>
                 <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="text-center text-light"><a class="text-light" href="post/<%= post._id %>"><%= post.description %></a></td>
                             <td class="text-center text-light"><img id="image" class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></imge</td>
                             <td class="text-center text-light"><%= post.dateCreated %></td>
+                            <td class="text-center text-light"><%= post.author %></td>
                         </tr>
                 <% }) %>
         </table>

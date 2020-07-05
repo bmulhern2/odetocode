@@ -16,9 +16,6 @@
                 font-size: 60px;
             } table {
                 font-size: 22px;
-            } image {
-                height: 15%;
-                width: 20%;
             }
         </style>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +36,7 @@
                 <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="text-center text-light"><a class="text-light" href="post/<%= post._id %>"><%= post.description %></a></td>
-                            <td class="text-center text-light"><img id="image" class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></imge</td>
+                            <td class="text-center text-light"><img class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></imge</td>
                             <td class="text-center text-light"><%= post.dateCreated %></td>
                             <td class="text-center text-light"><%= post.author %></td>
                         </tr>

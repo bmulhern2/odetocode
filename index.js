@@ -8,20 +8,27 @@ let http = require('http')
 let mongoose = require('mongoose')
 let bodyParser = require('body-parser')
 mongoose.connect(process.env.MONGO_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
+let multer = require('multer')
+let storage = multer.memoryStorage()
+let upload = multer({ storage: storage })
+let cookieParser = require('cookie-parser')
 let Schema = mongoose.Schema;
 let ObjectId = Schema.ObjectId;
 let PostSchema = new Schema({
     id: ObjectId,
     description: String,
+    //author: String,
+    //video: String,
     post: String,
+    image: String,
     dateCreated: Date
-
 })
 let Posts = mongoose.model('Post', PostSchema)
 let app = express()
 app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cookieParser())
 app.get('/', async function (req, res) {
     await Posts.find({}, function(err, posts) {
         if(!err) {
@@ -34,11 +41,15 @@ app.get('/', async function (req, res) {
 app.get('/admin', function (req, res) {
     res.render('admin')
 })
-app.post('/post/create', function (req, res) {
+app.post('/post/create', upload.single('image'), function (req, res) {
+    let image = req.file.buffer.toString('base64')
     let newPost = new Posts({
         description: req.body.description,
         post: req.body.post,
+        //author: req.body.author,
+       // video: req.body.video,
         id: req.params.id,
+        image: image,
         dateCreated: Date.now()
     })
     Posts.create(newPost)

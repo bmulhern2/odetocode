@@ -12,8 +12,7 @@
 
 //To Do
 
-// LightHouse
-// Author 
+// LightHouse / and /post
 // Video
 // More Articles
 

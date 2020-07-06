@@ -37,27 +37,26 @@
         </head>
     <body class="text-center bg-dark text-light">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <a class="navbar-brand text-success" href="/">OdeToCode</a>
+            <a class="navbar-brand text-light display-4" href="/">OdeToCode</a>
             <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-light"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbr-nav">
-                <% posts.forEach(function(post) { %>
+                <ul class="navbar-nav">
                     <li class="nav-item active bg-light list-unstyled">
-                        <a class="nav-link text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
+                        <a class="nav-link text-dark" href="/post/<%= Post._id %>"><%= Post.description %></a>
+                        <nav-link><a href="/" class="text-center">Back To OdeToCode</a></nav-link>
                     </li>
-                <% }) %>
                 </ul>
             </div>
-            <nav-link><a href="/">Back To OdeToCode</a></nav-link>
         </nav>
         <ul>
-            <li class="mt-2 list-unstyled text-danger"><%- Post.description %></li>
+            <li class="mt-2 list-unstyled text-primary display-4"><%- Post.description %></li>
             <li class="list-unstyled"><img alt="" class="list-unstyled mt-2" src="data:image/png;base64, <%= Post.image %>"></img></li>
             <li class="mt-4 list-unstyled"><%= Post.post %></li>
-            <li class="mt-2 list-unstyled text-danger"><%- Post.author %></li>
-            <li class="mt-4 list-unstyled text-danger"><%= Post.dateCreated %></li>
+            <hr class="bg-light">
+            <li class="mt-2 list-unstyled text-primary"><%- Post.author %></li>
+            <li class="mt-4 list-unstyled text-primary"><%= Post.dateCreated %></li>
         </ul>
     </body>
 </html>

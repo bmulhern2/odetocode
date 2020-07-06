@@ -25,12 +25,13 @@
         </head>
         <body class="text-center bg-dark text-light">
             <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-                <a class="navbar-brand text-success" href="/">OdeToCode</a>
-                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand text-light" href="/">OdeToCode</a>
+                <button class="navbar-toggler bg-light display-4" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon bg-light"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbr-nav">
+                        <h1 class="text-center">Articles</h1>
                     <% posts.forEach(function(post) { %>
                         <li class="nav-item active bg-light list-unstyled">
                             <a class="nav-link text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
@@ -48,7 +49,7 @@
                 </tr>
                 <% posts.forEach(function(post) { %>
                         <tr>
-                            <td class="text-center text-light"><a class="text-light" href="post/<%= post._id %>"><%= post.description %></a></td>
+                            <td class="text-center text-light"><a class="text-primary h4" href="post/<%= post._id %>"><%= post.description %></a></td>
                             <td class="text-center text-light"><img class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></imge</td>
                             <td class="text-center text-light"><%= post.dateCreated %></td>
                             <td class="text-center text-light"><%= post.author %></td>

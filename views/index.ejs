@@ -24,7 +24,20 @@
         <meta name="google-site-verification" content="MRECW15hjFWbOq_xbU9PHJWgJSlRwkZEFOJZaILP6yE" />
         </head>
         <body class="text-center bg-dark text-light">
-            <nav class="navbar">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                <a class="navbar-brand text-light" href="#">OdeToCode</a>
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbr-nav">
+                    <% posts.forEach(function(post) { %>
+                        <li class="nav-item active bg-light list-unstyled">
+                            <a class="nav-link text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
+                        </li>
+                    <% }) %>
+                    </ul>
+                </div>
             </nav>
         <table class="table">
                 <tr>

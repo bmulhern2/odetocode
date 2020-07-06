@@ -17,7 +17,6 @@
 
 let dotenv = require('dotenv')
 dotenv.config()
-let spdy = require('spdy')
 let express = require('express')
 let http = require('http')
 let mongoose = require('mongoose')
@@ -79,4 +78,4 @@ app.get('/post/:id', function (req, res) {
         }
     })
 })
-spdy.createServer(app).listen(process.env.PORT)
+http.createServer(app).listen(process.env.PORT)

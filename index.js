@@ -32,6 +32,7 @@ let multer = require('multer')
 let storage = multer.memoryStorage()
 let upload = multer({ storage: storage })
 let cookieParser = require('cookie-parser')
+let xml = require('xml')
 let Schema = mongoose.Schema;
 let ObjectId = Schema.ObjectId;
 let LogoSchema = new Schema({
@@ -62,6 +63,9 @@ app.get('/', function (req, res) {
             console.log(err)
         }
     })
+})
+app.get('/BingSiteAuth.xml', function (req, res) {
+    res.send(xml("BingSiteAuth.xml"))
 })
 app.get('/admin/logo', function (req, res) {
     res.render('logo')

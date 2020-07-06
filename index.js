@@ -57,6 +57,7 @@ app.use(cookieParser())
 app.get('/', function (req, res) {
     Posts.find({}, function(err, posts) {
         if(!err) {
+            post = posts.reverse()
     res.render("index", { posts: posts})
         } else {
             console.log(err)

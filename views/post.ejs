@@ -36,11 +36,24 @@
         </style>
         </head>
     <body class="text-center bg-dark text-light">
-        <nav class="bg-dark text-light">
-            <h1><%= Post.description %></h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand text-light" href="#">OdeToCode</a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbr-nav">
+                <% posts.forEach(function(post) { %>
+                    <li class="nav-item active bg-light list-unstyled">
+                        <a class="nav-link text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
+                    </li>
+                <% }) %>
+                </ul>
+            </div>
             <nav-link><a href="/">Back To OdeToCode</a></nav-link>
         </nav>
         <ul>
+            <li class="mt-2 list-unstyled text-danger"><%- Post.description %></li>
             <li class="list-unstyled"><img alt="" class="list-unstyled mt-2" src="data:image/png;base64, <%= Post.image %>"></img></li>
             <li class="mt-4 list-unstyled"><%= Post.post %></li>
             <li class="mt-2 list-unstyled text-danger"><%- Post.author %></li>

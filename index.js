@@ -12,8 +12,7 @@
 
 //To Do
 
-// LightHouse / and /post
-// One More Article
+// All 100s Lighthouse Article
 
 let dotenv = require('dotenv')
 dotenv.config()

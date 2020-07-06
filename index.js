@@ -64,6 +64,9 @@ app.get('/', function (req, res) {
         }
     })
 })
+app.get('/sitemap.xml', function (req, res) {
+    res.sendFile(__dirname + "/sitemap.xml")
+})
 app.get('/admin/logo', function (req, res) {
     res.render('logo')
 })

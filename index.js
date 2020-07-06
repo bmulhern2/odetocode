@@ -64,9 +64,6 @@ app.get('/', function (req, res) {
         }
     })
 })
-app.get('/BingSiteAuth.xml', function (req, res) {
-    res.send(xml("BingSiteAuth.xml"))
-})
 app.get('/admin/logo', function (req, res) {
     res.render('logo')
 })

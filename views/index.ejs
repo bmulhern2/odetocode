@@ -19,6 +19,8 @@
                 font-size: 60px;
             } table {
                 font-size: 22px;
+            } nav-link {
+                margin: 0!important;
             }
         </style>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -36,9 +38,7 @@
                     <ul class="navbar-nav">
                         <h1 class="text-center">Articles</h1>
                     <% posts.forEach(function(post) { %>
-                        <li class="nav-item active bg-light list-unstyled">
-                            <a class="nav-link text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
-                        </li>
+                            <a class="nav-link bg-light text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
                     <% }) %>
                     </ul>
                 </div>

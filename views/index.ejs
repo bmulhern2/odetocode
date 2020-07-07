@@ -37,13 +37,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <h1 class="text-center">Articles</h1>
                     <% posts.forEach(function(post) { %>
                             <a class="nav-link bg-light text-dark" href="/post/<%= post._id %>"><%= post.description %></a>
                     <% }) %>
                     </ul>
                 </div>
             </nav>
+            <h1 class="text-center">Articles</h1>
         <table class="table table-border border-dark">
                 <tr>
                     <th class="text-primary text-center">Description</th>

@@ -54,7 +54,7 @@
                 <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="text-center text-light"><a class="text-primary h4" href="post/<%= post._id %>"><%= post.description %></a></td>
-                            <td class="float-left"><img class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></img></td>
+                            <td class="float-left"><div><img class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></img></div></td>
                             <td class="text-center text-warning"><%= post.dateCreated %></td>
                             <td class="text-center text-danger"><%= post.author %></td>
                         </tr>

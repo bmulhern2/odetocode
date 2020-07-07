@@ -30,7 +30,7 @@
         <script data-ad-client="ca-pub-9679583512458769" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         </head>
         <body class="text-center bg-dark text-light">
-            <nav class="navbar (no expand class) navbar-inverse">
+            <nav class="navbar (no expand class) navbar-inverse navbar-light bg-dark border-left border-right border-top border-bottom border-light">
                 <a class="navbar-brand text-primary" href="/">OdeToCode</a>
                 <button class="navbar-toggler bg-light display-4" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon bg-light"></span>
@@ -44,7 +44,7 @@
                 </div>
             </nav>
             <h1 class="text-center">Articles</h1>
-        <table class="table border-dark">
+        <table class="table table-border border-dark">
                 <tr>
                     <th class="text-primary text-center">Description</th>
                     <th class="text-light text-center">Image</th>
@@ -54,7 +54,7 @@
                 <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="text-center text-light"><a class="text-primary h4" href="post/<%= post._id %>"><%= post.description %></a></td>
-                            <td class="float-left"><div><img class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></img></div></td>
+                            <td class="float-left"><div><img class="text-danger" src="data:image/png;base64, <%= post.image %>" alt=""></img></td>
                             <td class="text-center text-warning"><%= post.dateCreated %></td>
                             <td class="text-center text-danger"><%= post.author %></td>
                         </tr>

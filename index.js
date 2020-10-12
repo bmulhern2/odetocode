@@ -55,6 +55,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
+app.use(require('prerender-node'))
 app.get('/', function (req, res) {
     Posts.find({}, function(err, posts) {
         if(!err) {

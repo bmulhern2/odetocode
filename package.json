@@ -26,6 +26,7 @@
     "mongoose": "^5.9.21",
     "multer": "^1.4.2",
     "nodemon": "^2.0.4",
+    "prerender-node": "^3.2.5",
     "redis": "^3.0.2",
     "share": "^0.6.3",
     "sitemap-generator": "^8.5.0",
